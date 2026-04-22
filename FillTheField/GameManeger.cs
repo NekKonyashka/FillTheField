@@ -36,7 +36,6 @@ namespace FillTheField
             {
                 return;
             }
-            _window.RestartButton.IsEnabled = false;
             var tempPoint = _player.Position;
             float dist = 0;
             Direction dir = Direction.None;
@@ -142,6 +141,7 @@ namespace FillTheField
         public void RestartLevel()
         {
             _grid.Children.Clear();
+            _player.InMove = false;
             var currentLevel = _levels.Peek();
             _player.Reset();
             foreach (var obj in currentLevel.Content)
@@ -153,7 +153,6 @@ namespace FillTheField
 
         private void Player_OnDefeatOrVictoryCheck(object? sender, EventArgs e)
         {
-            _window.RestartButton.IsEnabled = true;
             if (_grid.Children.OfType<Rectangle>().Count() == 37)
             {
                 _levels.Dequeue();

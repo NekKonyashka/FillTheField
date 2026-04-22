@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace FillTheField
 {
-    internal class PlayerTrackCreator : Creator
+    internal class PlayerTrackCreator : ICreator
     {
-        public override GameObject CreateGameObject(Point position)
-        {
-            return new PlayerTrack(position);
-        }
+        public GameObject CreateGameObject(Point position) => new PlayerTrack(position);
+
     }
 }

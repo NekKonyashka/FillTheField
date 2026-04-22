@@ -39,6 +39,7 @@ namespace FillTheField
         }
         public void Win()
         {
+            RestartButton.IsEnabled = false;
             EndText.Text = "Победа";
             EndText.Visibility = Visibility.Visible;
             ActionButton.Content = "Next";
@@ -54,6 +55,7 @@ namespace FillTheField
         {
             ActionButton.Visibility = Visibility.Hidden;
             ActionButton.IsEnabled = false;
+            RestartButton.IsEnabled = true;
             EndText.Visibility= Visibility.Hidden;
             manager.ConstructLevel();
         }

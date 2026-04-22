@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace FillTheField
 {
-    public class WallCreator : Creator
+    public class WallCreator : ICreator
     {
-        public override Wall CreateGameObject(Point position) => new Wall(position);
+        public GameObject CreateGameObject(Point position) => new Wall(position);
     }
 }

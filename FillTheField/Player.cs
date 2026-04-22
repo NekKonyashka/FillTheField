@@ -24,7 +24,7 @@ namespace FillTheField
     }
     public class Player : GameObject
     {
-        public bool InMove { get; private set; } = false;
+        public bool InMove { get; set; } = false;
         public Point StartPos;
         private double _currentX = 0;
         private double _currentY = 0;
@@ -71,7 +71,7 @@ namespace FillTheField
             float path = dir == Direction.Left || dir == Direction.Right ?
                 (float)GameObject.ObjectWidth : (float)GameObject.ObjectHeight;
 
-            while (time >= elapsed)
+            while (time >= elapsed && InMove)
             {
                 if (dir == Direction.Right || dir == Direction.Left)
                 {
@@ -98,15 +98,12 @@ namespace FillTheField
                     }
                     ChangedPosition?.Invoke(this, new PlayerPositionArgs(this.Position));
                 }
+                _currentX = transform.X;
+                _currentY = transform.Y;
                 await Task.Delay(16);
             }
             OnDefeatOrVictoryCheck?.Invoke(this, null);
-            _currentX = transform.X;
-            _currentY = transform.Y;
             InMove = false;
         }
-
     }
-
-    
 }

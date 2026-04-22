@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FillTheField
 {
-    public abstract class Creator
+    public interface ICreator
     {
-        public abstract GameObject CreateGameObject(Point position);
+        GameObject CreateGameObject(Point position);
     }
 }
