@@ -9,10 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="res\0aa11347485b7a0.wav" />
     <None Remove="res\images.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="res\0aa11347485b7a0.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\images.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Numerics;
 using System.Reflection.Emit;
 using System.Text;
@@ -16,10 +17,10 @@ namespace FillTheField
 {
     public class GameManeger
     {
+        private SoundPlayer _soundPlayer = new SoundPlayer("./res/0aa11347485b7a0.wav");
         private MainWindow _window;
         private LevelFactory _factory;
         private Player _player;
-        private Point _startpos;
         private Grid _grid;
         private Queue<Level> _levels;
 
@@ -48,9 +49,8 @@ namespace FillTheField
                         do
                         {
                             --tempPoint.y;
-                            dist += 112.5f;
+                            dist += (float)GameObject.ObjectHeight;
                         } while (!IsCollider(tempPoint) && tempPoint.y > -1);
-                        ++tempPoint.y;
                         break;
                     }
                 case Key.A:
@@ -60,9 +60,8 @@ namespace FillTheField
                         do
                         {
                             --tempPoint.x;
-                            dist += 112.5f;
+                            dist += (float)GameObject.ObjectWidth;
                         } while (!IsCollider(tempPoint) && tempPoint.x > -1);
-                        ++tempPoint.x;
                         break;
                     }
                 case Key.D:
@@ -72,10 +71,8 @@ namespace FillTheField
                         do
                         {
                             ++tempPoint.x;
-                            dist -= 112.5f;
+                            dist -= (float)GameObject.ObjectWidth;
                         } while (!IsCollider(tempPoint) && tempPoint.x < _grid.RowDefinitions.Count);
-                        --tempPoint.x;
-
                         break;
                     }
                 case Key.S:
@@ -85,12 +82,16 @@ namespace FillTheField
                         do
                         {
                             ++tempPoint.y;
-                            dist -= 112.5f;
+                            dist -= (float)GameObject.ObjectHeight;
                         } while (!IsCollider(tempPoint) && tempPoint.y < _grid.ColumnDefinitions.Count);
-                        --tempPoint.y;
                         break;
                     }
             }
+            if(dist == 0 || dir == Direction.None)
+            {
+                return;
+            }
+            _soundPlayer.Play();
             _player.MoveAsync(dist, dir);
         }
         public bool IsCollider(Point pos)
@@ -123,6 +124,15 @@ namespace FillTheField
             _levels.Enqueue(_factory.Level4());
             _levels.Enqueue(_factory.Level5());
             _levels.Enqueue(_factory.Level6());
+            _levels.Enqueue(_factory.Level7());
+            _levels.Enqueue(_factory.Level8());
+            _levels.Enqueue(_factory.Level9());
+            _levels.Enqueue(_factory.Level10());
+            _levels.Enqueue(_factory.Level11());
+            _levels.Enqueue(_factory.Level12());
+            _levels.Enqueue(_factory.Level13());
+            _levels.Enqueue(_factory.Level14());
+            _levels.Enqueue(_factory.Level15());
         }
 
         public void ConstructLevel()

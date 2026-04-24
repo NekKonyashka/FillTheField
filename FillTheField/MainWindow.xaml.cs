@@ -17,6 +17,7 @@ namespace FillTheField
     /// </summary>
     public partial class MainWindow : Window
     {
+        private byte levelCount = 1;
         private GameManeger manager;
         public MainWindow()
         {
@@ -28,6 +29,7 @@ namespace FillTheField
         private void MyWindow_Loaded(object sender, RoutedEventArgs e)
         {
             GameObject.SetObjectSize(MyGrid.ColumnDefinitions[0].ActualWidth, MyGrid.RowDefinitions[0].ActualHeight);
+            LevelCounter.Text = levelCount.ToString();
             manager.LoadLevels();
             manager.ConstructLevel();
         }
@@ -57,6 +59,8 @@ namespace FillTheField
             ActionButton.IsEnabled = false;
             RestartButton.IsEnabled = true;
             EndText.Visibility= Visibility.Hidden;
+            levelCount++;
+            LevelCounter.Text = levelCount.ToString();
             manager.ConstructLevel();
         }
 

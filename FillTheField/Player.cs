@@ -26,6 +26,7 @@ namespace FillTheField
     {
         public bool InMove { get; set; } = false;
         public Point StartPos;
+        private TranslateTransform transform;
         private double _currentX = 0;
         private double _currentY = 0;
 
@@ -34,6 +35,10 @@ namespace FillTheField
         public Player(Point position) : base(position)
         {
             StartPos = position;
+            transform = new TranslateTransform();
+            transform.X = _currentX;
+            transform.Y = _currentY;
+            Object.RenderTransform = transform;
             Object.Fill = (Brush)new BrushConverter().ConvertFromString("#8E48D4");
             Object.Name = "Player";
             Object.StrokeThickness = 10;
@@ -45,22 +50,14 @@ namespace FillTheField
             _position = StartPos;
             _currentX = 0;
             _currentY = 0;
-            var transform = new TranslateTransform();
             transform.X = _currentX;
             transform.Y = _currentY;
-            Object.RenderTransform = transform;
         }
         public async void MoveAsync(float dist,Direction dir)
         {
-            var transform = new TranslateTransform();
             transform.X = _currentX;
             transform.Y = _currentY;
-            Object.RenderTransform = transform;
 
-            if (dist == 0)
-            {
-                return;
-            }
             InMove = true;
 
             var k = (sbyte)(dist / Math.Abs(dist));
@@ -96,7 +93,7 @@ namespace FillTheField
                     {
                         _position.y -= k;
                     }
-                    ChangedPosition?.Invoke(this, new PlayerPositionArgs(this.Position));
+                    ChangedPosition?.Invoke(this, new PlayerPositionArgs(Position));
                 }
                 _currentX = transform.X;
                 _currentY = transform.Y;

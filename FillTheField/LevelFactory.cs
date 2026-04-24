@@ -9,8 +9,8 @@ namespace FillTheField
     public class LevelFactory
     {
         private Level _currentLevel;
-        private WallCreator wallCreator;
-        private PlayerCreator playerCreator;
+        private ICreator wallCreator;
+        private ICreator playerCreator;
 
         public LevelFactory(WallCreator wallCreator, PlayerCreator playerCreator)
         {
@@ -102,5 +102,107 @@ namespace FillTheField
             return _currentLevel;
         }
 
+        public Level Level7()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(2, 0));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(1, 4));
+            AddWall(new Point(1, 3));
+            AddWall(new Point(2, 4));
+            AddWall(new Point(2, 3));
+            AddPlayer(new Point(3, 2));
+            return _currentLevel;
+        }
+
+        public Level Level8()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(5, 2));
+            AddWall(new Point(3, 3));
+            AddPlayer(new Point(3, 4));
+            return _currentLevel;
+        }
+        public Level Level9()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(1, 3));
+            AddWall(new Point(3, 2));
+            AddWall(new Point(3, 3));
+            AddPlayer(new Point(1, 4));
+            return _currentLevel;
+        }
+        public Level Level10()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(4, 4));
+            AddWall(new Point(4, 5));
+            AddWall(new Point(5, 4));
+            AddWall(new Point(5, 5));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(2, 4));
+            AddWall(new Point(2, 3));
+            AddWall(new Point(0, 3));
+            AddPlayer(new Point(2, 0));
+            return _currentLevel;
+        }
+        public Level Level11()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(2, 4));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(4, 5));
+            AddWall(new Point(5, 5));
+            AddPlayer(new Point(2, 0));
+            return _currentLevel;
+        }
+        public Level Level12()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(1, 1));
+            AddWall(new Point(2, 1));
+            AddWall(new Point(3, 3));
+            AddPlayer(new Point(2, 3));
+            return _currentLevel;
+        }
+        public Level Level13()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 0));
+            AddWall(new Point(2, 2));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(4, 4));
+            AddPlayer(new Point(0, 5));
+            return _currentLevel;
+        }
+        public Level Level14()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(1, 1));
+            AddWall(new Point(0, 3));
+            AddWall(new Point(3, 2));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(2, 4));
+            AddWall(new Point(3, 4));
+            AddWall(new Point(4, 4));
+            AddPlayer(new Point(4, 1));
+            return _currentLevel;
+        }
+        public Level Level15()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(2, 0));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(2, 3));
+            AddWall(new Point(1, 4));
+            AddWall(new Point(3, 5));
+            AddPlayer(new Point(2, 2));
+            return _currentLevel;
+        }
     }
 }
