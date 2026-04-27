@@ -204,5 +204,129 @@ namespace FillTheField
             AddPlayer(new Point(2, 2));
             return _currentLevel;
         }
+        public Level Level16()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(4, 1));
+            AddWall(new Point(2, 2));
+            AddWall(new Point(3, 3));
+            AddPlayer(new Point(2, 3));
+            return _currentLevel;
+        }
+        public Level Level17()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 1));
+            AddWall(new Point(2, 3));
+            AddWall(new Point(3, 3));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(4, 4));
+            AddPlayer(new Point(3, 4));
+            return _currentLevel;
+        }
+
+        public Level Level18()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(1, 1));
+            AddWall(new Point(1, 2));
+            AddWall(new Point(1, 3));
+            AddWall(new Point(2, 1));
+            AddWall(new Point(3, 1));
+            AddWall(new Point(5, 2));
+            AddWall(new Point(4, 4));
+            AddWall(new Point(4, 5));
+            AddPlayer(new Point(0, 5));
+            return _currentLevel;
+        }
+        public Level Level19()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(0, 2));
+            AddWall(new Point(1, 2));
+            AddWall(new Point(2, 2));
+            AddWall(new Point(1, 4));
+            AddWall(new Point(2, 4));
+            AddWall(new Point(3, 4));
+            AddWall(new Point(5, 5));
+            AddPlayer(new Point(5, 0));
+            return _currentLevel;
+        }
+        public Level Level20()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 0));
+            AddWall(new Point(1, 1));
+            AddWall(new Point(0, 3));
+            AddWall(new Point(2, 2));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(1, 5));
+            AddWall(new Point(5, 5));
+            AddPlayer(new Point(4, 5));
+            return _currentLevel;
+        }
+        public Level Level21()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 3));
+            AddWall(new Point(2, 3));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(3, 4));
+            AddWall(new Point(0, 4));
+            AddWall(new Point(0, 5));
+            AddWall(new Point(1, 5));
+            AddWall(new Point(5, 5));
+            AddPlayer(new Point(3, 2));
+            return _currentLevel;
+        }
+        public Level Level22()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(2, 2));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(4, 2));
+            AddWall(new Point(4, 3));
+            AddWall(new Point(4, 4));
+            AddWall(new Point(3, 4));
+            AddPlayer(new Point(1, 2));
+            return _currentLevel;
+        }
+        public Level Level23()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 0));
+            AddWall(new Point(3, 1));
+            AddWall(new Point(4, 1));
+            AddWall(new Point(2, 2));
+            AddWall(new Point(1, 4));
+            AddWall(new Point(2, 4));
+            AddWall(new Point(3, 4));
+            AddWall(new Point(4, 4));
+            AddPlayer(new Point(4, 3));
+            return _currentLevel;
+        }
+        public Level Level24()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(1, 1));
+            AddWall(new Point(2, 3));
+            AddWall(new Point(3, 3));
+            AddWall(new Point(5, 2));
+            AddWall(new Point(4, 4));
+            AddWall(new Point(0, 5));
+            AddWall(new Point(1, 5));
+            AddWall(new Point(2, 5));
+            AddPlayer(new Point(3, 2));
+            return _currentLevel;
+        }
+        public Level Level25()
+        {
+            _currentLevel = new Level();
+            AddWall(new Point(3, 0));
+            AddWall(new Point(1, 1));
+            AddWall(new Point(0, 3));
+            AddPlayer(new Point(2, 4));
+            return _currentLevel;
+        }
     }
 }

@@ -133,6 +133,16 @@ namespace FillTheField
             _levels.Enqueue(_factory.Level13());
             _levels.Enqueue(_factory.Level14());
             _levels.Enqueue(_factory.Level15());
+            _levels.Enqueue(_factory.Level16());
+            _levels.Enqueue(_factory.Level17());
+            _levels.Enqueue(_factory.Level18());
+            _levels.Enqueue(_factory.Level19());
+            _levels.Enqueue(_factory.Level20());
+            _levels.Enqueue(_factory.Level21());
+            _levels.Enqueue(_factory.Level22());
+            _levels.Enqueue(_factory.Level23());
+            _levels.Enqueue(_factory.Level24());
+            _levels.Enqueue(_factory.Level25());
         }
 
         public void ConstructLevel()
